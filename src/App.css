@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(8, 8, 34);
+  color: white;
+}
+.app {
+  text-align: center;
+}
+.box {
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+  padding: 20px;
+  height: 65vh;
+  padding-bottom: 50px;
+ 
+}
+.box::-webkit-scrollbar {
+  height: 4px;
+}
+.box::-webkit-scrollbar-thumb {
+  background-color: rgb(201, 196, 196);
+  border-radius: 20px;
+}
+.movie {
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+}
+.movie img {
+  width: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+.searchbox{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.search {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+.search::placeholder {
+  color: rgba(31, 28, 28, 0.473);
+}
+.overlay {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  height: 35px;
+  width: 100%;
+  padding: 10px;
+  bottom: 20%;
+  justify-content: space-between;
+  background-color: rgba(3, 3, 3, 0.719);
+  transition: all ease-in-out 0.3s;
+}
+.overlay h6 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.movie:hover .title {
+  opacity: 0.7;
+  transition: all ease-in-out 0.3s;
+}
+.movie:hover img {
+  opacity: 0.7;
+  transition: all ease-in-out 0.3s;
+}
+.movie:hover .overlay {
+  opacity: 1;
+  color: white;
+  transition: all ease-in-out 0.3s;
+}
+.overlay i {
+  color: red;
+}
+.header button{
+    padding: 10px 6px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.name{
+    padding: 10px 0px;
+}
+.name h1{
+    background: linear-gradient(to left,red , green);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 2rem;
+    text-transform: uppercase;
+    word-spacing: 10px;
+}
+
+@media (max-width: 400px) {
+    .header h3{
+        font-size: 1.3rem;
+    } 
+    .header input {
+        width: 70%;
+    }
+}
