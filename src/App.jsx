@@ -4,7 +4,9 @@ import FilmList from './components/FilmList'
 import './App.css'
 import Search from './components/Search';
 import Name from './components/Name';
-
+import Details from "./components/Details"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from './components/Home';
 
 
 function App() {
@@ -38,13 +40,11 @@ function App() {
 
   useEffect(() => {
     render()
-    console.log(localStorage.getItem('savedFave'));
   }, [search])
 
   useEffect(() => {
 
     let getFave = JSON.parse(localStorage.getItem('savedFave'))
-    console.log(getFave);
     setFavourites(getFave || [])
   }, [])
 
@@ -72,16 +72,40 @@ function App() {
 
   return (
     <div className='app'>
-      <Name />
-      <Header heading={'searched movies'}
-        Search={<Search search={search} setSearch={setSearch} />} />
+      <BrowserRouter>
+        <Name />
 
-      {movies.length <= 0 ? <h1>no movie to display</h1> :
-        <FilmList movies={movies} text={"add to favourite"} addToFave={addToFave} />}
+        <Routes>
+          <Route path='/' element={ <Home Search={<Search search={search} setSearch={setSearch} />}
+            movies={movies} moviesF={favourite} addToFave={addToFave} remove={removeFave} clear={clear}
+          />} />
 
-      <Header heading={'favourites'} clear={clear} />
-      {favourite.length <= 0 ? <h3>no favourites to display</h3> :
-        <FilmList movies={favourite} addToFave={removeFave} text={"remove favourite"} />}
+
+          {/* <Route path='/' element={<Header heading={'searched movies'}
+            Search={<Search search={search} setSearch={setSearch} />} />
+
+          
+
+          } />
+
+          {movies.length <= 0 ? <Route path='/' element={<h1>no movie to display</h1>} /> :
+            <Route path='/' element={<FilmList movies={movies} text={"add to favourite"} addToFave={addToFave} />} />
+          }
+
+
+
+
+          <Route path='' element={<Header heading={'favourites'} clear={clear} />} />
+
+          {favourite.length <= 0 ? <Route path='/' element={<h3>no favourites to display</h3>} /> :
+            <Route path='' element={<FilmList movies={favourite} addToFave={removeFave} text={"remove favourite"} />} />
+          }
+ */}
+
+
+          <Route exact path='/:id' element={<Details />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

@@ -17,7 +17,6 @@ body {
   padding: 20px;
   height: 52vh;
   padding-bottom: 50px;
- 
 }
 .box::-webkit-scrollbar {
   height: 4px;
@@ -42,10 +41,10 @@ body {
   padding: 20px;
   align-items: center;
 }
-.searchbox{
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
+.searchbox {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 .search {
   width: 100%;
@@ -75,6 +74,7 @@ body {
 .overlay h6 {
   text-transform: uppercase;
   font-weight: 700;
+  text-decoration: none;
 }
 .movie:hover .title {
   opacity: 0.7;
@@ -92,31 +92,75 @@ body {
 .overlay i {
   color: red;
 }
-.header button{
-    padding: 10px 6px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+.header button {
+  padding: 10px 6px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
-.name{
-    padding: 10px 0px;
+.name {
+  padding: 10px 0px;
 }
-.name h1{
-    background: linear-gradient(to left,red , green);
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    font-size: 2rem;
-    text-transform: uppercase;
-    word-spacing: 10px;
-    cursor: grab;
+.name h1 {
+  background: linear-gradient(to left, red, green);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 2rem;
+  text-transform: uppercase;
+  word-spacing: 10px;
+  cursor: grab;
+}
+.link {
+  text-decoration: none;
+}
+.return {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  background-color: blue;
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  
+}
+
+.accord {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.bg {
+  background-color: rgb(128, 110, 207);
+  color: white;
+  border: none;
+}
+.card {
+  width: 80%;
+  color: white;
+  background-color: black !important;
+}
+.card h1 button {
+  color: red !important;
+}
+.card * h4 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(97, 90, 90, 0.822) !important;
+}
+
+.each {
+  position: relative;
+}
+.details {
+  margin-top: 60px;
 }
 
 @media (max-width: 400px) {
-    .header h3{
-        font-size: 1.3rem;
-    } 
-    .header input {
-        width: 70%;
-    }
+  .header h3 {
+    font-size: 1.3rem;
+  }
+  .header input {
+    width: 70%;
+  }
 }
