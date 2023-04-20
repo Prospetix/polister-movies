@@ -113,6 +113,7 @@ body {
 }
 .link {
   text-decoration: none;
+  color: white;
 }
 .return {
   padding: 10px;
